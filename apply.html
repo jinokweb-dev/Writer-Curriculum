@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>소리글 22기 수강 신청서 - 소리글</title>
+  <meta name="description" content="소리글 22기 크리에이터 과정 공식 수강 신청 페이지입니다. 단 4주 만에 작가와 음악 프로듀서로 데뷔하세요.">
+  
+  <!-- Pretendard 폰트 -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"></noscript>
+  
+  <!-- 나눔명조 및 Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  
+  <!-- CSS 스타일시트 링크 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="apply-page-body">
+
+  <!-- 헤더 & 네비게이션 (심플 버전) -->
+  <header class="header">
+    <nav class="nav max-width">
+      <a href="index.html" class="logo">
+        <span class="logo-text">소리글</span>
+        <span class="logo-sub">Soriguel</span>
+      </a>
+      <a href="index.html" class="nav-link">&larr; 홈으로 돌아가기</a>
+    </nav>
+  </header>
+
+  <main class="apply-main">
+    <section class="apply-form-section">
+      <div class="max-width-md">
+        
+        <div class="apply-header text-center scroll-anim appear">
+          <div class="badge">소리글 22기 수강 신청</div>
+          <h1 class="serif mb-4">작가 & 프로듀서 데뷔의 첫걸음</h1>
+          <p class="text-muted">
+            아래 신청서를 꼼꼼히 작성해 주세요. 보내주신 소중한 정보를 바탕으로<br>
+            강사 J가 직접 사전 유선 상담(선착순) 전화를 드립니다.
+          </p>
+        </div>
+
+        <!-- 메인 신청서 카드 -->
+        <div class="apply-card-container scroll-anim appear">
+          <form id="sorigeul-full-apply-form" novalidate>
+            
+            <!-- 섹션 1: 코스 선택 -->
+            <div class="form-section-block">
+              <h3 class="serif form-section-title"><span class="number">1</span> 수강 희망 코스 선택</h3>
+              
+              <div class="course-selection-grid">
+                <!-- 작가 코스 -->
+                <label class="course-card-label">
+                  <input type="radio" name="course" value="writer" checked>
+                  <div class="course-card-content">
+                    <span class="course-icon">📖</span>
+                    <span class="course-title-text serif">작가 코스 (4주 완성)</span>
+                    <span class="course-desc-text">글쓰기 & 전자책 유통 과정</span>
+                    <span class="course-price-text">29만원 <span class="original">45만원</span></span>
+                  </div>
+                </label>
+
+                <!-- 프로듀서 코스 -->
+                <label class="course-card-label">
+                  <input type="radio" name="course" value="producer">
+                  <div class="course-card-content">
+                    <span class="course-icon">🎵</span>
+                    <span class="course-title-text serif">프로듀서 코스 (4주 완성)</span>
+                    <span class="course-desc-text">SUNO AI 작곡 & 글로벌 음원 유통</span>
+                    <span class="course-price-text">29만원 <span class="original">45만원</span></span>
+                  </div>
+                </label>
+
+                <!-- 더블 코스 -->
+                <label class="course-card-label double-selection">
+                  <input type="radio" name="course" value="double">
+                  <div class="course-card-content">
+                    <span class="badge-best">추천</span>
+                    <span class="course-icon">🌟</span>
+                    <span class="course-title-text serif">작가 + 프로듀서 더블 코스</span>
+                    <span class="course-desc-text">두 분야 마스터 & 정산 계정 연동</span>
+                    <span class="course-price-text">49만원 <span class="original">90만원</span></span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- 섹션 2: 기본 인적 사항 -->
+            <div class="form-section-block">
+              <h3 class="serif form-section-title"><span class="number">2</span> 지원자 인적 사항</h3>
+              
+              <div class="form-group">
+                <label for="full-name">성함 (실명)</label>
+                <input type="text" id="full-name" name="name" placeholder="실명을 입력해 주세요" required>
+                <span class="error-msg" id="name-error">이름을 입력해 주세요.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="full-phone">연락처</label>
+                <input type="tel" id="full-phone" name="phone" placeholder="010-0000-0000" required>
+                <span class="error-msg" id="phone-error">올바른 연락처 형식을 입력해 주세요 (예: 010-1234-5678).</span>
+              </div>
+
+              <div class="form-group">
+                <label for="full-email">이메일 주소</label>
+                <input type="email" id="full-email" name="email" placeholder="example@email.com" required>
+                <span class="error-msg" id="email-error">올바른 이메일 형식을 입력해 주세요.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="depositor-name">입금자명 <span class="optional">(선택)</span></label>
+                <input type="text" id="depositor-name" name="depositor" placeholder="신청인 성함과 다를 경우에만 작성해 주세요">
+              </div>
+            </div>
+
+            <!-- 섹션 3: 사전 인터뷰 질문 -->
+            <div class="form-section-block">
+              <h3 class="serif form-section-title"><span class="number">3</span> 창작을 위한 사전 인터뷰</h3>
+              
+              <div class="form-group">
+                <label for="writing-topic">평소에 다루고 싶었던 책의 주제나 글감이 있으신가요?</label>
+                <textarea id="writing-topic" name="writingTopic" rows="3" placeholder="예시) 나의 직장 퇴사 생존기, 취미 요리 에세이, 위로가 되는 짧은 에세이 등 (구체적이지 않거나 아직 없어도 괜찮습니다)"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="music-style">만들어보고 싶은 음악의 분위기나 장르가 있으신가요?</label>
+                <textarea id="music-style" name="musicStyle" rows="3" placeholder="예시) 잔잔한 Lo-Fi 비트, 어쿠스틱 발라드, 신나는 시티팝 멜로디 등 (상상하시는 분위기를 마음껏 적어주세요)"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="pc-skill">본인의 컴퓨터/스마트폰 조작 수준을 선택해 주세요.</label>
+                <select id="pc-skill" name="pcSkill">
+                  <option value="easy">문서 작성 및 인터넷 검색에 무리가 없음 (적당함)</option>
+                  <option value="difficult">컴퓨터 다루기가 낯설고 느린 편임 (지원이 다소 필요함)</option>
+                  <option value="expert">다양한 최신 협업 도구 및 인터넷 조작에 익숙함 (원활함)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="user-message">강사 J에게 사전 면담 시 특별히 물어보고 싶은 질문이 있으신가요?</label>
+                <textarea id="user-message" name="message" rows="3" placeholder="질문을 편하게 남겨주시면 오리엔테이션 전화 시 상세히 답변해 드리겠습니다."></textarea>
+              </div>
+            </div>
+
+            <!-- 섹션 4: 동의 및 주의사항 확인 -->
+            <div class="form-section-block">
+              <h3 class="serif form-section-title"><span class="number">4</span> 필수 규정 동의</h3>
+              
+              <div class="policy-brief-box">
+                <p><strong>수강 확정 및 이월 정책:</strong></p>
+                <p>소리글은 기수별 선착순 10명 내외의 소수 정예 집중 1:1 케어 과정으로 운영됩니다. 신청 후 수강료가 입금되는 순서대로 등록이 확정되며, 단톡방 개설 및 오리엔테이션 미팅 시작 이후에는 원칙적으로 환불이 불가능합니다. 단, 불가피한 사유가 발생할 경우 다음 기수로 1회 이월이 가능합니다.</p>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="agree-privacy-full" required>
+                  <span>개인정보 수집 및 사전 전화상담 안내 동의 (필수)</span>
+                </label>
+                <span class="error-msg" id="privacy-error-full">개인정보 동의가 필요합니다.</span>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="agree-policy-full" required>
+                  <span>수강 규정 및 환불/이월 정책 확인 동의 (필수)</span>
+                </label>
+                <span class="error-msg" id="policy-error-full">수강 규정 동의가 필요합니다.</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg shadow-btn mt-6">수강 신청서 전송하기 &rarr;</button>
+          </form>
+
+          <!-- 계좌 안내 -->
+          <div class="payment-info-box">
+            <h4 class="serif">수강료 입금 안내</h4>
+            <p class="account-line">신한은행 <span class="account-number">324-02-431881</span> (예금주: 임진옥)</p>
+            <p class="notice">* 신청서 제출 후 위 계좌로 수강료를 입금해 주시면, 확인 후 24시간 이내에 기재해 주신 연락처로 강사 J가 직접 사전 상담 및 접수 완료 전화를 드립니다.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 신청 성공 축하 모달 -->
+  <div id="apply-success-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-icon">🎉</div>
+      <h3 class="serif">신청서가 성공적으로 전송되었습니다!</h3>
+      <p class="modal-message">
+        소리글 22기 크리에이터로서의 첫걸음을 떼신 것을 진심으로 환영합니다.
+      </p>
+      <div class="modal-info-box">
+        <p><strong>수강료 입금 계좌</strong></p>
+        <p class="account">신한은행 324-02-431881 (예금주: 임진옥)</p>
+        <p class="sub-alert">* 입금자명이 신청인 명의와 다를 경우, 기재해주신 예금주명으로 입금 상태를 확인한 후 24시간 내로 강사 J가 접수 완료 안내 전화를 드리겠습니다.</p>
+      </div>
+      <button class="btn btn-primary" id="modal-confirm-btn">확인했습니다</button>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="max-width footer-container">
+      <div class="footer-brand">
+        <h3 class="serif">소리글</h3>
+        <p class="font-alt">sorigeul.co.kr | sorigeul.kr</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Soriguel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS 스크립트 파일 링크 -->
+  <script src="script.js"></script>
+</body>
+</html>

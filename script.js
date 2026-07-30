@@ -140,13 +140,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 7. 신청서 폼 유효성 검증 및 축하 팝업 모달 작동
   const form = document.getElementById("sorigeul-apply-form");
+  const fullForm = document.getElementById("sorigeul-full-apply-form");
   const modal = document.getElementById("apply-success-modal");
-  const modalClose = modal.querySelector(".modal-close");
+  const modalClose = modal ? modal.querySelector(".modal-close") : null;
   const modalConfirmBtn = document.getElementById("modal-confirm-btn");
   
   // 개별 에러 표기 함수
   const setError = (elementId, showError) => {
     const inputElement = document.getElementById(elementId);
+    if (!inputElement) return;
     const formGroup = inputElement.closest(".form-group");
     if (showError) {
       formGroup.classList.add("error");
@@ -155,75 +157,139 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    
-    const nameInput = document.getElementById("user-name");
-    const phoneInput = document.getElementById("user-phone");
-    const emailInput = document.getElementById("user-email");
-    const privacyCheckbox = document.getElementById("agree-privacy");
-    
-    let isValid = true;
-    
-    // 이름 검증
-    if (nameInput.value.trim() === "") {
-      setError("user-name", true);
-      isValid = false;
-    } else {
-      setError("user-name", false);
-    }
-    
-    // 연락처 검증 (정규식: 01X-XXXX-XXXX 형태 또는 숫자 연속)
-    const phoneRegex = /^(01[016789])[-. ]?(\d{3,4})[-. ]?(\d{4})$/;
-    if (!phoneRegex.test(phoneInput.value.trim())) {
-      setError("user-phone", true);
-      isValid = false;
-    } else {
-      setError("user-phone", false);
-    }
-    
-    // 이메일 검증
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailInput.value.trim())) {
-      setError("user-email", true);
-      isValid = false;
-    } else {
-      setError("user-email", false);
-    }
-    
-    // 개인정보동의 검증
-    if (!privacyCheckbox.checked) {
-      setError("agree-privacy", true);
-      isValid = false;
-    } else {
-      setError("agree-privacy", false);
-    }
-    
-    // 유효성 통과 시 모달 오픈
-    if (isValid) {
-      modal.style.display = "flex";
-      form.reset(); // 전송 후 양식 비우기
-    }
-  });
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const nameInput = document.getElementById("user-name");
+      const phoneInput = document.getElementById("user-phone");
+      const emailInput = document.getElementById("user-email");
+      const privacyCheckbox = document.getElementById("agree-privacy");
+      
+      let isValid = true;
+      
+      // 이름 검증
+      if (nameInput.value.trim() === "") {
+        setError("user-name", true);
+        isValid = false;
+      } else {
+        setError("user-name", false);
+      }
+      
+      // 연락처 검증
+      const phoneRegex = /^(01[016789])[-. ]?(\d{3,4})[-. ]?(\d{4})$/;
+      if (!phoneRegex.test(phoneInput.value.trim())) {
+        setError("user-phone", true);
+        isValid = false;
+      } else {
+        setError("user-phone", false);
+      }
+      
+      // 이메일 검증
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value.trim())) {
+        setError("user-email", true);
+        isValid = false;
+      } else {
+        setError("user-email", false);
+      }
+      
+      // 개인정보동의 검증
+      if (!privacyCheckbox.checked) {
+        setError("agree-privacy", true);
+        isValid = false;
+      } else {
+        setError("agree-privacy", false);
+      }
+      
+      // 유효성 통과 시 모달 오픈
+      if (isValid && modal) {
+        modal.style.display = "flex";
+        form.reset(); // 전송 후 양식 비우기
+      }
+    });
+  }
+
+  // 전체 신청서 폼 검증
+  if (fullForm) {
+    fullForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const nameInput = document.getElementById("full-name");
+      const phoneInput = document.getElementById("full-phone");
+      const emailInput = document.getElementById("full-email");
+      const privacyCheckbox = document.getElementById("agree-privacy-full");
+      const policyCheckbox = document.getElementById("agree-policy-full");
+      
+      let isValid = true;
+      
+      // 이름 검증
+      if (nameInput.value.trim() === "") {
+        setError("full-name", true);
+        isValid = false;
+      } else {
+        setError("full-name", false);
+      }
+      
+      // 연락처 검증
+      const phoneRegex = /^(01[016789])[-. ]?(\d{3,4})[-. ]?(\d{4})$/;
+      if (!phoneRegex.test(phoneInput.value.trim())) {
+        setError("full-phone", true);
+        isValid = false;
+      } else {
+        setError("full-phone", false);
+      }
+      
+      // 이메일 검증
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value.trim())) {
+        setError("full-email", true);
+        isValid = false;
+      } else {
+        setError("full-email", false);
+      }
+      
+      // 약관 동의 검증
+      if (!privacyCheckbox.checked) {
+        setError("agree-privacy-full", true);
+        isValid = false;
+      } else {
+        setError("agree-privacy-full", false);
+      }
+
+      if (!policyCheckbox.checked) {
+        setError("agree-policy-full", true);
+        isValid = false;
+      } else {
+        setError("agree-policy-full", false);
+      }
+      
+      // 유효성 통과 시 모달 오픈
+      if (isValid && modal) {
+        modal.style.display = "flex";
+        fullForm.reset();
+      }
+    });
+  }
   
   // 모달 닫기 제어
   const closeModal = () => {
-    modal.style.display = "none";
+    if (modal) modal.style.display = "none";
   };
   
-  modalClose.addEventListener("click", closeModal);
-  modalConfirmBtn.addEventListener("click", closeModal);
+  if (modalClose) modalClose.addEventListener("click", closeModal);
+  if (modalConfirmBtn) modalConfirmBtn.addEventListener("click", closeModal);
   
   // 모달 바깥쪽 클릭 시 닫기
   window.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    if (modal && e.target === modal) {
       closeModal();
     }
   });
   
   // ESC 누르면 모달 닫기
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.style.display === "flex") {
+    if (e.key === "Escape" && modal && modal.style.display === "flex") {
       closeModal();
     }
   });
