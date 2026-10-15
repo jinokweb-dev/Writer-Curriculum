@@ -328,5 +328,51 @@ document.addEventListener("DOMContentLoaded", () => {
     // 구형 브라우저 대응: 즉시 노출
     scrollAnims.forEach(el => el.classList.add("appear"));
   }
-  
+
+  // 9. 상담/신청 유형 선택 모달 (개인 수강 vs 기업강의·직원교육)
+  const choiceModal = document.getElementById("apply-choice-modal");
+  const choiceModalClose = document.getElementById("choice-modal-close");
+  const openChoiceBtns = document.querySelectorAll(".open-choice-modal");
+
+  const openChoiceModal = (e) => {
+    if (e) e.preventDefault();
+    if (choiceModal) {
+      choiceModal.style.display = "flex";
+      // 모바일 메뉴가 열려 있다면 닫기
+      if (typeof mobileMenu !== "undefined" && mobileMenu && mobileMenu.classList.contains("open")) {
+        mobileMenu.classList.remove("open");
+        const bars = mobileToggle.querySelectorAll(".bar");
+        bars[0].style.transform = "none";
+        bars[1].style.opacity = "1";
+        bars[2].style.transform = "none";
+      }
+    }
+  };
+
+  const closeChoiceModal = () => {
+    if (choiceModal) choiceModal.style.display = "none";
+  };
+
+  openChoiceBtns.forEach(btn => {
+    btn.addEventListener("click", openChoiceModal);
+  });
+
+  if (choiceModalClose) {
+    choiceModalClose.addEventListener("click", closeChoiceModal);
+  }
+
+  // 모달 배경 클릭 시 닫기
+  window.addEventListener("click", (e) => {
+    if (choiceModal && e.target === choiceModal) {
+      closeChoiceModal();
+    }
+  });
+
+  // ESC 키 누르면 선택 모달도 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && choiceModal && choiceModal.style.display === "flex") {
+      closeChoiceModal();
+    }
+  });
+
 });
