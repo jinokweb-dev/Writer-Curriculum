@@ -2530,5 +2530,218 @@ section {
   }
 }
 
+/* ==========================================================================
+   18. 시니어 3개월 자서전 & 동화 코스 커리큘럼 스타일
+   ========================================================================== */
+#senior-course .week-tag {
+  color: #B25E00;
+  background-color: #FFF3E0;
+}
 
+.senior-overview-box {
+  background: linear-gradient(135deg, rgba(232, 110, 80, 0.05), rgba(212, 163, 89, 0.08));
+  border: 1px solid rgba(212, 163, 89, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  margin-bottom: 40px;
+}
 
+.senior-overview-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.senior-overview-badge {
+  display: inline-block;
+  background-color: var(--color-gold);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.senior-overview-title {
+  font-size: 1.6rem;
+  color: var(--color-text-main);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.senior-overview-sub {
+  font-size: 0.975rem;
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.senior-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.senior-spec-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.senior-spec-icon {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.senior-spec-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-coral);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.senior-spec-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-main);
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.senior-strengths-section {
+  margin-bottom: 48px;
+}
+
+.senior-strengths-title {
+  font-size: 1.35rem;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--color-text-main);
+}
+
+.senior-strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.senior-strength-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--color-gold);
+}
+
+.senior-strength-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.senior-strength-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.senior-month-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0 24px 0;
+}
+
+.senior-month-badge {
+  background: var(--color-text-main);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 8px 20px;
+  border-radius: 30px;
+  white-space: nowrap;
+}
+
+.senior-month-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.senior-month-desc {
+  font-size: 0.9rem;
+  color: var(--color-coral);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.output-tag {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: #4A5568;
+  background-color: #EDF2F7;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.senior-callout-box {
+  background: #FFFDF8;
+  border: 1px solid #ECC94B;
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  margin-top: 48px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.senior-callout-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.senior-callout-content h4 {
+  font-size: 1.15rem;
+  color: var(--color-text-main);
+  margin-bottom: 8px;
+}
+
+.senior-callout-content p {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .senior-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .senior-strengths-grid {
+    grid-template-columns: 1fr;
+  }
+  .senior-month-divider {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .senior-specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
