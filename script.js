@@ -64,20 +64,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const historyToggleBtn = document.getElementById("history-toggle-btn");
   const hiddenHistoryPanel = document.getElementById("hidden-history-panel");
   
-  historyToggleBtn.addEventListener("click", () => {
-    const isPanelOpen = hiddenHistoryPanel.classList.contains("open");
-    if (isPanelOpen) {
-      hiddenHistoryPanel.classList.remove("open");
-      historyToggleBtn.innerHTML = "소리글 역대 출간작 및 음원 성과 자세히 보기 &darr;";
-    } else {
-      hiddenHistoryPanel.classList.add("open");
-      historyToggleBtn.innerHTML = "출간작 및 음원 성과 목록 접기 &uarr;";
-      // 토글 열릴 때 스크롤 위치 맞추기
-      setTimeout(() => {
-        hiddenHistoryPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 300);
-    }
-  });
+  if (historyToggleBtn && hiddenHistoryPanel) {
+    historyToggleBtn.addEventListener("click", () => {
+      const isPanelOpen = hiddenHistoryPanel.classList.contains("open");
+      if (isPanelOpen) {
+        hiddenHistoryPanel.classList.remove("open");
+        historyToggleBtn.innerHTML = "소리글 역대 출간작 및 음원 성과 자세히 보기 &darr;";
+      } else {
+        hiddenHistoryPanel.classList.add("open");
+        historyToggleBtn.innerHTML = "출간작 및 음원 성과 목록 접기 &uarr;";
+        // 토글 열릴 때 스크롤 위치 맞추기
+        setTimeout(() => {
+          hiddenHistoryPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 300);
+      }
+    });
+  }
 
   // 4. 커리큘럼 탭 전환 (Curriculum Tab Switcher)
   const tabBtns = document.querySelectorAll(".tab-btn");
@@ -106,19 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const cautionToggleBtn = document.getElementById("caution-toggle-btn");
   const cautionContent = document.getElementById("caution-content");
   
-  cautionToggleBtn.addEventListener("click", () => {
-    const isOpen = cautionContent.classList.contains("open");
-    if (isOpen) {
-      cautionContent.classList.remove("open");
-      cautionToggleBtn.innerHTML = "⚠️ 신청 전 필수 확인사항 (주의사항 및 규정) &darr;";
-    } else {
-      cautionContent.classList.add("open");
-      cautionToggleBtn.innerHTML = "필수 확인사항 내용 접기 &uarr;";
-      setTimeout(() => {
-        cautionContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 200);
-    }
-  });
+  if (cautionToggleBtn && cautionContent) {
+    cautionToggleBtn.addEventListener("click", () => {
+      const isOpen = cautionContent.classList.contains("open");
+      if (isOpen) {
+        cautionContent.classList.remove("open");
+        cautionToggleBtn.innerHTML = "⚠️ 신청 전 필수 확인사항 (주의사항 및 규정) &darr;";
+      } else {
+        cautionContent.classList.add("open");
+        cautionToggleBtn.innerHTML = "필수 확인사항 내용 접기 &uarr;";
+        setTimeout(() => {
+          cautionContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 200);
+      }
+    });
+  }
 
   // 6. FAQ 아코디언 (FAQ Accordion with smooth height)
   const faqItems = document.querySelectorAll(".faq-item");
