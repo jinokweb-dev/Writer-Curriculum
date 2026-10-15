@@ -2530,6 +2530,10 @@ section {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  .exhibition-images-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   .director-profile-section {
     padding: 24px;
   }
