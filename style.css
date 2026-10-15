@@ -2538,6 +2538,98 @@ section {
   background-color: #FFF3E0;
 }
 
+/* 상단 기관 출강 제안 배너 */
+.senior-top-proposal-banner {
+  background: linear-gradient(135deg, #FFFDF8, #FFF8ED);
+  border: 2px solid #E2A03F;
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin-bottom: 32px;
+  box-shadow: 0 6px 20px rgba(226, 160, 63, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.senior-top-proposal-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #E2A03F, #D97706);
+}
+
+.proposal-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.proposal-pill-badge {
+  background-color: #D97706;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+.proposal-target-tag {
+  background-color: #FEF3C7;
+  color: #92400E;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #FCD34D;
+}
+
+.proposal-main-title {
+  font-size: 1.45rem;
+  color: #78350F;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.proposal-desc {
+  font-size: 1.025rem;
+  color: #451A03;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.proposal-tip-box {
+  background: #FFFFFF;
+  border: 1px solid #FDE68A;
+  border-left: 4px solid #D97706;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.proposal-tip-box .tip-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.proposal-tip-box .tip-text {
+  font-size: 0.95rem;
+  color: #4B5563;
+  line-height: 1.65;
+}
+
+.proposal-tip-box .tip-text strong {
+  color: #92400E;
+}
+
 .senior-overview-box {
   background: linear-gradient(135deg, rgba(232, 110, 80, 0.05), rgba(212, 163, 89, 0.08));
   border: 1px solid rgba(212, 163, 89, 0.3);
