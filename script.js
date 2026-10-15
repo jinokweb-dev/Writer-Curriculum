@@ -14,6 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // 1-1. 소리글 로고 클릭 시 메인 최상단으로 부드럽게 이동
+  const logoLink = document.getElementById("header-logo-link") || document.querySelector(".logo");
+  if (logoLink) {
+    logoLink.addEventListener("click", (e) => {
+      const currentPath = window.location.pathname;
+      // index.html 또는 메인 루트 경로일 때는 새로고침 없이 최상단으로 스크롤
+      if (currentPath.endsWith("index.html") || currentPath === "/" || currentPath.endsWith("/") || currentPath === "") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  }
+
   // 2. 모바일 메뉴 토글 (Mobile Menu Navigation)
   const mobileToggle = document.querySelector(".mobile-menu-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
