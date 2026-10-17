@@ -433,7 +433,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
       <li><a href="#apply">신청 방법</a></li>
     </ul>
     <div class="nav-r">
-      <a class="btn btn-grad" href="#apply">신청하기</a>
+      <a class="btn btn-grad" href="#apply" data-consult>신청하기</a>
       <button class="burger" id="burger" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer"><span></span></button>
     </div>
   </div>
@@ -446,7 +446,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
         <li><a href="#faq">자주 묻는 질문</a></li>
         <li><a href="#apply">신청 방법</a></li>
       </ul>
-      <a class="btn btn-grad" href="#apply">신청하기</a>
+      <a class="btn btn-grad" href="#apply" data-consult>신청하기</a>
     </div>
   </nav>
 </header>
@@ -461,7 +461,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
         <p class="sub">글을 처음 써봐도, 악기를 못 다뤄도 괜찮아요.</p>
         <div class="hero-cta">
           <a class="btn btn-grad" href="#courses">나에게 맞는 과정 보기</a>
-          <a class="btn btn-glass" href="#apply">바로 신청하기</a>
+          <a class="btn btn-glass" href="#apply" data-consult>바로 신청하기</a>
         </div>
       </div>
       <div class="duo" aria-hidden="true">
@@ -508,7 +508,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
           </ul>
         </div>
         <div class="perks"><span>종이책 · 전자책 모두 가능</span><span>인세 100% 본인 귀속</span><span>AI 프롬프트 팩</span></div>
-        <div class="p-foot"><p>다음 기수 일정은 신청 후 상담 때 안내드려요.</p><a class="btn btn-grad" href="#apply">작가 코스 신청하기</a></div>
+        <div class="p-foot"><p>다음 기수 일정은 신청 후 상담 때 안내드려요.</p><a class="btn btn-grad" href="#apply" data-consult>작가 코스 신청하기</a></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-producer" aria-labelledby="c-producer" hidden>
@@ -523,7 +523,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
           <div class="st"><span class="num"><i>4</i>4주차</span><h4>발매하고 수익을 연결해요</h4><ul><li>멜론 · 스포티파이 출시 확인</li><li>스트리밍 수익 정산 연동</li></ul><span class="out">1:1 코칭 · 프로듀서 데뷔</span></div>
         </div>
         <div class="perks"><span>장비 · 프로그램 필요 없음</span><span>저작권 수익 100% 본인 귀속</span><span>유통 승인 체크리스트</span></div>
-        <div class="p-foot"><p>다음 기수 일정은 신청 후 상담 때 안내드려요.</p><a class="btn btn-grad" href="#apply">프로듀서 코스 신청하기</a></div>
+        <div class="p-foot"><p>다음 기수 일정은 신청 후 상담 때 안내드려요.</p><a class="btn btn-grad" href="#apply" data-consult>프로듀서 코스 신청하기</a></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-double" aria-labelledby="c-double" hidden>
@@ -536,7 +536,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
           <div><h4>프로듀서 코스 · 4주</h4><p>SUNO 작곡부터 멜론 · 스포티파이 발매까지. 1:1 코칭 3회.</p><a href="#courses" data-open="c-producer">주차별 일정 보기 →</a></div>
         </div>
         <div class="perks"><span>아티스트 포트폴리오 웹페이지 제작</span><span>연속 · 병행 수강 가능</span></div>
-        <div class="p-foot"><p>시집을 내고, 그 시로 음원까지 발매한 수강생이 있어요.</p><a class="btn btn-grad" href="#apply">더블 트랙 신청하기</a></div>
+        <div class="p-foot"><p>시집을 내고, 그 시로 음원까지 발매한 수강생이 있어요.</p><a class="btn btn-grad" href="#apply" data-consult>더블 트랙 신청하기</a></div>
       </div>
 
       <div class="panel" role="tabpanel" id="p-inst" aria-labelledby="c-inst" hidden>
@@ -790,6 +790,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
   function setFab(o){fs.hidden=!o;fb.setAttribute('aria-expanded',o);fl.textContent=o?'닫기':'상담하기';}
   fb.addEventListener('click',function(e){e.stopPropagation();setFab(fs.hidden)});
   fs.addEventListener('click',function(e){if(e.target.closest('a'))setFab(false)});
+  [].forEach.call(document.querySelectorAll('[data-consult]'),function(a){a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();if(typeof setMenu==='function')setMenu(false);setFab(true);});});
   document.addEventListener('click',function(e){if(!fs.hidden&&!e.target.closest('.fab-wrap'))setFab(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setFab(false)});
 
