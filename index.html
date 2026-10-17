@@ -788,7 +788,7 @@ footer.site .wrap{display:flex;justify-content:space-between;align-items:center;
   function setFab(o){fs.hidden=!o;fb.setAttribute('aria-expanded',o);fl.textContent=o?'닫기':'상담하기';}
   fb.addEventListener('click',function(e){e.stopPropagation();setFab(fs.hidden)});
   fs.addEventListener('click',function(e){if(e.target.closest('a'))setFab(false)});
-  [].forEach.call(document.querySelectorAll('[data-consult]'),function(a){a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();if(typeof setMenu==='function')setMenu(false);setFab(true);});});
+  [].forEach.call(document.querySelectorAll('[data-consult],a[href*="open.kakao.com"]:not(.fs-opt)'),function(a){a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();if(typeof setMenu==='function')setMenu(false);setFab(true);});});
   document.addEventListener('click',function(e){if(!fs.hidden&&!e.target.closest('.fab-wrap'))setFab(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setFab(false)});
 
